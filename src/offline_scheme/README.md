@@ -1,4 +1,4 @@
-![Offline mission planning scheme](../../figures/offline_scheme.png)
+<img src="../../figures/offline_scheme.png" width="60%">
 
 # Initial Solver Usage
 The Initial Solver involves a Google OR-Tools and step reduction loop. Initial Solver aims at providing an initial solution for further optimization. This initial solution should be the first feasible solution in step reduction loop. The source code takes few input arguments:
@@ -20,7 +20,7 @@ Note that option 8 and option 9 **cannot** be set as 1 at the same time.
 # Optimization Solver Usage
 The Optimization Solver mainly involves the Context-aware Black Hole Algorithm. Optimization Solver aims at optimizing the given initial solution with certain fitness metric. The source code takes few input arguments:
 ```
-mpiexec -n 2 cpp_bha <1> <2> <3> <4> <5> <6> <7> <8> <9> <10>
+mpiexec -n 4 cpp_bha <1> <2> <3> <4> <5> <6> <7> <8> <9> <10>
 ```
 1. input file directory
 2. output file directory
@@ -44,7 +44,7 @@ The sensor node deployment file ***for offline scheme*** should have a format li
 | ... | ...   | ...    | ...   | ...    | ...   | ...     |
 | -1  | 0     | 0      | 0     | 0      | 0     | 0       |
 
-Note that the column name should be same as above table, i.e. `id, x_pos, y_pos, z_pos, p_flag, volts, weights`:
+Note that the column name should be same as above table, i.e. `id,x_pos,y_pos,z_pos,p_flag,volts,weights`:
 * id: Sensor node ID
 * x_pos: The x-coordinate of the sensor node (cm)
 * y_pos: The y-coordinate of the sensor node (cm)
@@ -102,14 +102,14 @@ exclude start node and end node. Because the initial solution file is an input f
 ## Execution time file (Initial Solver)
 The Initial Solver execution time file (default name "or_time.txt") is for recording the execution time of the Initial Solver. It should have a single-row data with 
 ```
-timestamp,single algorithm execution time,total program execution time
+timestamp,single_algorithm_execution_time,total_program_execution_time
 ```
 where time unit is second.
 
 ## Execution time file (Optimization Solver)
 The Optimization Solver execution time file (default name "comp_time.txt") is for recording the execution time of the Optimization Solver. It should have a single-row data with 
 ```
-timestamp,fitness metric,algorithm execution time
+timestamp,fitness_metric,algorithm_execution_time
 ```
 where time unit is second.
 
@@ -124,6 +124,7 @@ The execution summary file (default name "summary.csv") involves the summary of 
 
 | Timestamp | M_{init} | M_{opt} | DE_{init} | DE_{opt} | DE_{all} | RE_{init} | RE_{opt} | RE_{all} |
 |-------------|----------|---------|-----------|----------|----------|-----------|----------|----------|
+
 where:
 * Timestamp: the timestamp of this execution
 * M_{init}: The fitness metric value of Initial Solver's route

@@ -1,8 +1,11 @@
 # ROMP
 1. UAV mission plan with different strategies:
-![Different stratgies](figures/diff_strategies.png)
+
+<img src="figures/diff_strategies.png" width="80%">
+
 2. UAV online mission planning:
-![Online mission](figures/dynamic_energy.png)
+
+<img src="figures/dynamic_energy.png" width="80%">
 
 ## Paper
 Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging Scheduling Problem (CSP). Please see more details in our [paper](https://arxiv.org/abs/2203.04595). If the code is useful, please feel free to cite our paper: 
@@ -50,7 +53,7 @@ ROMP/
 cd CSP/
 ./simple_demo.sh
 ```
-5. Users may refer to parameter setting of [Initial Solver](src/offline_scheme/initial_solver/main/README.md), [Optimization Solver](src/offline_scheme/optimization_solver/README.md) and [ROMP](src/online_scheme/ROMP/README.md).
+5. Users may refer to parameter setting of [Initial Solver & Optimization Solver](src/offline_scheme/README.md), and [ROMP](src/online_scheme/README.md).
 6. Obtain results at `out/` directory and visualized figures at `fig/` directory.
 
 ## Contact

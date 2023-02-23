@@ -1,9 +1,9 @@
-![Online mission planning scheme](../../figures/online_scheme.png)
+<img src="../../figures/offline_scheme.png" width="60%">
 
 # ROMP
 ROMP is the online mission planner algorithm that utilizes the previous given route. Therefore, a previous route has to be provided before running ROMP code. ROMP aims at adding/dropping nodes from the route to match the actual UAV battery. The source code takes few input arguments:
 ```
-mpiexec -n 2 cpp_romp <1> <2> <3> <4> <5> <6> <7> <8> <9> <10> <11>
+mpiexec -n 4 cpp_romp <1> <2> <3> <4> <5> <6> <7> <8> <9> <10> <11>
 ```
 1. input file directory
 2. output file directory
@@ -33,7 +33,7 @@ The sensor node deployment file ***for online scheme*** should have a format lik
 | 2   | 4029 | 155511 | 0     | 0      | 1.686 | 6       |
 | ... | ... | ...   | ...   | ...    | ...   | ...     |
 
-Note that the column name should be same as above table, i.e. `id, x_pos, y_pos, z_pos, p_flag, volts, weights`:
+Note that the column name should be same as above table, i.e. `id,x_pos,y_pos,z_pos,p_flag,volts,weights`:
 * id: Sensor node ID
 * x_pos: The x-coordinate of the sensor node (cm)
 * y_pos: The y-coordinate of the sensor node (cm)
@@ -92,7 +92,7 @@ The above table is an example for the grid resolution mentioned in above Wind gr
 ## Execution time file
 The execution time file of the online scheme (default name "comp_time.txt"). It should have a single-row data with:
 ```
-timestamp,algorithm execution time
+timestamp,algorithm_execution_time
 ```
 
 ## Execution summary file
@@ -100,6 +100,7 @@ The execution summary file (default name "summary.csv") involves the summary of 
 
 | Timestamp     | M          | DE        | DE_{all}    | RE         | RE_{all}   | Feas |
 |---------------|------------|-----------|-------------|------------|------------|------|
+
 where:
 * Timestamp: the timestamp of this execution
 * M: the fitness metric value of ROMP's route
