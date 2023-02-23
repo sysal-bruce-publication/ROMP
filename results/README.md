@@ -13,7 +13,7 @@ In this experiment, one OP case were tested with dynamic changes of UAV remain e
 ## Iterative execution with increasing sensor node numbers
 In this experiment, 15 cases with increasing numbers of nodes (from 10 to 150) in fixed field scale were tested. This experiment aims at testing in these scenarios, how many UAVs will be needed to charge all nodes. More details can be seen in [increasing-nodes-charge-all](increasing-nodes-charge-all).
 
-## Experiment 6: Wind impact on solution performance
+## Wind impact on solution performance
 In this experiment, 100 TSP cases were generated to test wind effect on solution improvement. More details can be seen in [wind-impact](wind-impact).
 
 
