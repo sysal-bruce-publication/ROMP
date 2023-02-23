@@ -1,4 +1,10 @@
 # ROMP
+1. UAV mission plan with different strategies:
+![Different stratgies](figures/diff_strategies.png)
+2. UAV online mission planning:
+![Online mission](figures/dynamic_energy.png)
+
+## Paper
 Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging Scheduling Problem (CSP). Please see more details in our [paper](https://arxiv.org/abs/2203.04595). If the code is useful, please feel free to cite our paper: 
 ```
 @article{qian2022practical,
@@ -19,9 +25,9 @@ The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed b
 
 ## Quick Start
 1. Follow the [guidance](src/README.md) of how to configure the environment.
-2. Create directory construct as below:
+2. Create directory as below:
 ```
-CSP/
+ROMP/
 |1---->| inp/               # Store needed input files
 |1---->| out/               # Store output files  
 |1---->| fig/               # Store visualized figures
@@ -29,7 +35,7 @@ CSP/
 |2-------->| cpp_ortools      
 |1---->| opt_solver/        # Store binary executable file of optimization solver
 |2-------->| cpp_bha 
-|1---->| romp/              # Store binary executable file of ROMP
+|1---->| online_romp/       # Store binary executable file of ROMP
 |2-------->| cpp_romp         
 ```
 3. Extract [example inputs](example_input/example_input.7z) to `inp/` directory:
@@ -38,22 +44,14 @@ CSP/
 |2------------>| case0.csv        # Sensor node data
 |2------------>| grid_info.txt    # Wind grid data
 |2------------>| wind_vector.csv  # Time-vary wind vector data  
-|2------------>| obs_info.txt     # Obstacle data (optional)
 ```
-4. Execute code with following command example (details please see README file in [src](src/)), 
-Users may refer to parameter setting of [Initial Solver](src/offline_scheme/initial_solver/main/README.md), [Optimization Solver](src/offline_scheme/optimization_solver/README.md) and [ROMP](src/online_scheme/ROMP/README.md).
+4. Run a [bash script](scripts/simple_demo.sh) under `CSP/`
 ```
-init_solver/cpp_ortools "case0.csv" "init_sol0.txt" 0 0 0
-mpiexec -n 4 optimization_solver/cpp_bha "case0.csv" "init_sol0.txt" 0 50 50 50 50 5 -100 0
+cd CSP/
+./simple_demo.sh
 ```
-4. Obtain results at `out/` directory.
-
-## Demo
-1. Manual UAV energy update:
-![Online Mission Re-Planning](results/3_dynamic_case/op1-77-bal/fig/real_res.png)
-2. Recharge entire sensor network:
-![Iterative recharging task - Iteration 1](results/4_iterative_case/case60/fig/iter_fig0.png)
-![Iterative recharging task - Iteration 2](results/4_iterative_case/case60/fig/iter_fig1.png)
+5. Users may refer to parameter setting of [Initial Solver](src/offline_scheme/initial_solver/main/README.md), [Optimization Solver](src/offline_scheme/optimization_solver/README.md) and [ROMP](src/online_scheme/ROMP/README.md).
+6. Obtain results at `out/` directory and visualized figures at `fig/` directory.
 
 ## Contact
 Mr. Qiuchen Qian - qiuchen.qian19@imperial.ac.uk  

@@ -465,7 +465,7 @@ int main(int argc, char** argv)
             }
             else {
                 int cnt = 2;
-                for (int i = 500; i > 0; i -= 1) {
+                for (int i = prize_sum - 1; i > 0; i -= 1) {
                     uav_capacity = i;
                     try { solver_status = operations_research::calSolOP(); }
                     catch(runtime_error& e) { cerr << e.what() << '\n'; return EXIT_FAILURE; }

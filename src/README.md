@@ -44,7 +44,7 @@ ROMP/
 |3------------>| point.cpp
 |3------------>|...
 ```
-4. Note that [WORKSPACE](src/offline_scheme/WORKSPACE) and [BUILD](src/offline_scheme/init_solver/main/BUILD) are **compulsory** files for compiling ortools. 
+4. Note that [WORKSPACE](offline_scheme/init_solver/WORKSPACE) and [BUILD](offline_scheme/init_solver/main/BUILD) are **compulsory** files for compiling ortools. 
 Please check [Google's guidance](https://github.com/google/or-tools/blob/stable/bazel/README.md) for updating. Now we can build source code with:
 ```
 cd init_solver/
@@ -70,7 +70,12 @@ ROMP/
 ```
 3. Build the code with `mpicxx`:
 ```
-cd opt_solver/main/
+cd opt_solver/
 mpicxx -std=c++2a *.cpp -o cpp_bha
 ```
-4. The binary executable file can be found in `opt_solver/main/cpp_bha`.
+4. The binary executable file can be found in `opt_solver/cpp_bha`.
+5. Similarly, to build source code of ROMP:
+```
+cd online_romp/
+mpicxx -std=c++2a *.cpp -o cpp_romp
+``` 
