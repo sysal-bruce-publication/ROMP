@@ -15,6 +15,6 @@ In this experiment, 15 cases with increasing numbers of nodes (from 10 to 150) i
 
 ## Wind impact on solution performance
 In this experiment, 100 TSP cases were generated to test wind effect on solution improvement. More details can be seen in [wind-impact](wind-impact).
-
-
+## ROMP vs offline scheme with online energy updates
+In this experiment, we selected case30, case50, case70, case90, and case150 as target instances. We assume when the UAV charged 10 sensor nodes, it updated the actual battery, which is 10% less (and more) than the expected battery level. More details can be seen in [dynamic-energy-change-readjust-vs-offline](dynamic-energy-change-readjust-vs-offline).
 
