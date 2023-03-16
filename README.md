@@ -1,13 +1,5 @@
 # ROMP
-1. UAV mission plan with different strategies:
 
-<img src="figures/diff_strategies.png" width="80%">
-
-2. UAV online mission planning:
-
-<img src="figures/dynamic_energy.png" width="80%">
-
-## Paper
 Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging Scheduling Problem (CSP). Please see more details in our [paper](https://arxiv.org/abs/2203.04595). If the code is useful, please feel free to cite our paper: 
 ```
 @article{qian2022practical,
@@ -18,7 +10,10 @@ Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging
 }
 ```
 
-## Prerequisites
+## Quick Start
+
+**Prerequisites**
+
 The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed below:
 * [Google OR-Tools (or-tools_x86_64_Ubuntu-20.04_cpp_v9.5.2237)](https://developers.google.com/optimization) 
 * [Bazel (6.0.0)](https://bazel.build/)
@@ -26,7 +21,6 @@ The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed b
 * [GCC 9 (gcc & g++ 9.4.0)](https://gcc.gnu.org/gcc-9/)
 * [Python3 (3.8.10)](https://www.python.org/)
 
-## Quick Start
 1. Follow the [guidance](src/README.md) of how to configure the environment.
 2. Create directory as below:
 ```
@@ -55,6 +49,14 @@ cd CSP/
 ```
 5. Users may refer to parameter setting of [Initial Solver & Optimization Solver](src/offline_scheme/README.md), and [ROMP](src/online_scheme/README.md).
 6. Obtain results at `out/` directory and visualized figures at `fig/` directory.
+
+## DEMO
+<img src="figures/diff_strategies.png" width="80%">
+Fig.1. An OP instance of OR-Tools’ solution and CBHA’s solutions using different search strategies.
+
+
+<img src="figures/dynamic_energy.png" width="80%">
+Fig.2. An instance of flight plans with dynamic energy update, where (a) shows the original route plan of the given network; (b) shows the CBHA solution when PDV’s remaining energy is reduced to 50 Wh; (c) shows the CBHA solution when PDV’s remaining energy is reduced to 22 Wh; (d) is the actual route plan after re-planning of (b) and (c)
 
 ## Contact
 Mr. Qiuchen Qian - qiuchen.qian19@imperial.ac.uk  
