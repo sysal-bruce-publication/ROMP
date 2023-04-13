@@ -21,6 +21,7 @@ The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed b
 * [GCC 9 (gcc & g++ 9.4.0)](https://gcc.gnu.org/gcc-9/)
 * [Python3 (3.8.10)](https://www.python.org/)
 
+**Instructions**
 1. Follow the [guidance](src/README.md) of how to configure the environment.
 2. Create directory as below:
 ```
