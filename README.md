@@ -14,7 +14,7 @@ Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging
 
 **Prerequisites**
 
-The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed below:
+The source code has been tested on Ubuntu 20.04 LTS. The dependence are listed below:
 * [Google OR-Tools (or-tools_x86_64_Ubuntu-20.04_cpp_v9.5.2237)](https://developers.google.com/optimization) 
 * [Bazel (6.0.0)](https://bazel.build/)
 * [MPICH (mpiexec (OpenRTE) 4.0.3)](https://www.mpich.org/)
@@ -26,15 +26,15 @@ The source code has been tested on Ubuntu 20.04 LTS. The dependices are listed b
 2. Create directory as below:
 ```
 ROMP/
-|1---->| inp/               # Store needed input files
-|1---->| out/               # Store output files  
-|1---->| fig/               # Store visualized figures
-|1---->| init_solver/       # Store binary executable file of initial solver
+|1---->| inp/             # Store needed input files
+|1---->| out/             # Store output files  
+|1---->| fig/             # Store visualized figures
+|1---->| init_solver/     # Store binary executable file of initial solver
 |2-------->| cpp_ortools      
-|1---->| opt_solver/        # Store binary executable file of optimization solver
+|1---->| opt_solver/      # Store binary executable file of optimization solver
 |2-------->| cpp_bha 
-|1---->| online_romp/       # Store binary executable file of ROMP
-|2-------->| cpp_romp         
+|1---->| fastromp/        # Store binary executable file of ROMP
+|2-------->| cpp_fastromp         
 ```
 3. Extract [example inputs](example_input/example_input.7z) to `inp/` directory:
 ```
@@ -48,7 +48,7 @@ ROMP/
 cd CSP/
 ./simple_demo.sh
 ```
-5. Users may refer to parameter setting of [Initial Solver & Optimization Solver](src/offline_scheme/README.md), and [ROMP](src/online_scheme/README.md).
+5. Users may refer to parameter setting of [Initial Solver & Optimization Solver](src/ROMP/README.md), and [ROMP](src/FastROMP/README.md).
 6. Obtain results at `out/` directory and visualized figures at `fig/` directory.
 
 ## DEMO

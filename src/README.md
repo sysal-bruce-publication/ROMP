@@ -44,7 +44,7 @@ ROMP/
 |3------------>| point.cpp
 |3------------>|...
 ```
-4. Note that [WORKSPACE](offline_scheme/init_solver/WORKSPACE) and [BUILD](offline_scheme/init_solver/main/BUILD) are **compulsory** files for compiling ortools. 
+4. Note that [WORKSPACE](ROMP/init_solver/WORKSPACE) and [BUILD](ROMP/init_solver/main/BUILD) are **compulsory** files for compiling ortools. 
 Please check [Google's guidance](https://github.com/google/or-tools/blob/stable/bazel/README.md) for updating. Now we can build source code with:
 ```
 cd init_solver/
