@@ -9,9 +9,9 @@ clear
 # cd ../opt_solver
 # mpicxx -std=c++2a *.cpp -o cpp_bha
 # echo "Build BHA done."
-# cd ../online_ROMP
-# mpicxx -std=c++2a *.cpp -o cpp_romp
-# echo "Build Online ROMP done."
+# cd ../fastromp
+# mpicxx -std=c++2a *.cpp -o cpp_fastromp
+# echo "Build FastROMP done."
 # cd ../
 
 echo "Check workspace directory layout"
@@ -39,9 +39,9 @@ echo "Offline mission planning done."
 
 energy=40
 echo "After charged 5 nodes, the UAV battery dropped to $energy Wh."
-python3 online_romp/readjust.py --inp $inp_dir --out $out_dir --fig $fig_dir --offl_case_inp "iter0.csv" --offl_simu_inp "simu_res.txt" --onl_case_inp "re_iter0.csv" --onl_simu_inp "re_simu_res0.txt" --onl_case_out "re_iter1.csv" --onl_simu_out "re_simu_res1.txt" --new_eng $energy --num_pass 5 -v
+python3 fastromp/readjust.py --inp $inp_dir --out $out_dir --fig $fig_dir --offl_case_inp "iter0.csv" --offl_simu_inp "simu_res.txt" --onl_case_inp "re_iter0.csv" --onl_simu_inp "re_simu_res0.txt" --onl_case_out "re_iter1.csv" --onl_simu_out "re_simu_res1.txt" --new_eng $energy --num_pass 5 -v
 
-echo "Online ROMP starts"
-mpiexec -n 4 online_ROMP/cpp_romp "$inp_dir" "$out_dir" "re_iter1.csv" "re_simu_res1.txt" "re_simu_res2.txt" 50 80 80 5 0.75
+echo "FastROMP starts"
+mpiexec -n 4 fastromp/cpp_romp "$inp_dir" "$out_dir" "re_iter1.csv" "re_simu_res1.txt" "re_simu_res2.txt" 50 80 80 5 0.75
 python3 visual_readjust.py --inp "$inp_dir" --out "$out_dir" --fig "$fig_dir" --case_fname "re_iter1.csv" --res_fname "re_simu_res2.txt" --out_fname "iter_fig2.png" 
 echo "Calculation done. Please check results in $out_dir and figures in $fig_dir".
