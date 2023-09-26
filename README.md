@@ -2,12 +2,13 @@
 
 Rapid Online Metaheuristic-based Mission Planner (ROMP) for solving UAV Charging Scheduling Problem (CSP). Please see more details in our [paper](https://arxiv.org/abs/2203.04595). If the code is useful, please feel free to cite our paper: 
 ```
-@article{qian2022practical,
-  title={Practical mission planning for optimized uav-sensor wireless recharging},
-  author={Qian, Qiuchen and OKeeffe, James and Wang, Yanran and Boyle, David},
-  journal={arXiv preprint arXiv:2203.04595},
-  year={2022}
-}
+@misc{qian2023practical,
+      title={Practical Mission Planning for Optimized UAV-Sensor Wireless Recharging}, 
+      author={Qiuchen Qian and James O'Keeffe and Yanran Wang and David Boyle},
+      year={2023},
+      eprint={2203.04595},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}}
 ```
 
 ## Quick Start
